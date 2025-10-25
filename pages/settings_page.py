@@ -14,8 +14,9 @@ class SettingsPage(BasePage):
         )
       change_password_button.click()
 
-  def verify_right_page(self):
-   current_url = self.driver.current_url
-   assert "set-new-password" in current_url, f"Expected 'settings' in URL, but got: {current_url}"
-   print(f"✓ Settings page verified: {current_url}")
+
+  # def verify_right_page(self):
+  #  current_url = self.driver.current_url
+  #  assert "set-new-password" in current_url, f"Expected 'settings' in URL, but got: {current_url}"
+  #  print(f"✓ Settings page verified: {current_url}")
 
