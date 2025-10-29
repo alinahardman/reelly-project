@@ -13,17 +13,17 @@ class SignInPage(BasePage):
         self.open_url('https://soft.reelly.io/sign-in')
 
     def login(self, email, password):
-       email_field = WebDriverWait(self.driver, 15).until(
+       email_field = WebDriverWait(self.driver, 20).until(
     EC.element_to_be_clickable(self.EMAIL_FIELD)
 )
        email_field.send_keys(email)
 
-       password_field = WebDriverWait(self.driver, 15).until(
+       password_field = WebDriverWait(self.driver, 20).until(
     EC.element_to_be_clickable(self.PASSWORD_FIELD)
 )
        password_field.send_keys(password)
 
-       continue_button = WebDriverWait(self.driver, 15).until(
+       continue_button = WebDriverWait(self.driver, 20).until(
     EC.element_to_be_clickable(self.CONTINUE_BUTTON)
 )
        continue_button.click()
