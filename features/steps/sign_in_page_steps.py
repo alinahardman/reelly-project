@@ -5,7 +5,7 @@ CONTINUE_BUTTON = (By.CSS_SELECTOR, '[wized="loginButton"]')
 
 # TEMPORARY CREDENTIALS - WILL MOVE TO ENVIRONMENT FILE LATER
 TEST_EMAIL = "halina.hard@gmail.com"
-TEST_PASSWORD = "xxxxx"
+TEST_PASSWORD = "XXXXX"
 
 @given("Open Sign In page")
 def open_sign_in(context):
