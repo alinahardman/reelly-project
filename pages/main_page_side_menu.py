@@ -6,6 +6,13 @@ from pages.base_page import BasePage
 
 class MainPageSideMenu(BasePage):
     SETTINGS_BUTTON = (By.CSS_SELECTOR, '.menu-button-block[href="/settings"]')
+    MENU_BUTTON = (By.CSS_SELECTOR, "a.new-market-menu-button._1")
+
+    def click_hamburger_menu(self):
+        """Click the hamburger menu to open the sidebar"""
+        # Click menu button
+        menu = self.wait.until(EC.element_to_be_clickable(self.MENU_BUTTON))
+        menu.click()
 
     def click_settings(self):
         settings_button = WebDriverWait(self.driver, 10).until(

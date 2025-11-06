@@ -7,8 +7,8 @@ from pages.base_page import BasePage
 class NewPasswordPage(BasePage):
     NEW_PASSWORD_FIELD = (By.ID, 'Enter-new-password')
     REPEAT_PASSWORD_FIELD = (By.ID, 'Repeat-password')
-    CHANGE_PASSWORD_BUTTON = (By.CSS_SELECTOR, 'a.submit-button-2[wized="changePasswordButton"]')
-
+    # CHANGE_PASSWORD_BUTTON = (By.CSS_SELECTOR, 'a.submit-button-2[wized="changePasswordButton"]')
+    CHANGE_PASSWORD_BUTTON_MOBILE = (By.CSS_SELECTOR, "[wized='changePasswordButton']")
 
     def set_new_test_password(self, new_password):
         new_password_field = WebDriverWait(self.driver, 15).until(
@@ -23,7 +23,7 @@ class NewPasswordPage(BasePage):
 
     def verify_change_password_button_is_clickable(self):
         button = self.wait.until(
-            EC.element_to_be_clickable(self.CHANGE_PASSWORD_BUTTON)
+            EC.element_to_be_clickable(self.CHANGE_PASSWORD_BUTTON_MOBILE)
         )
 
         assert button.is_enabled(), "Change password button is not enabled"

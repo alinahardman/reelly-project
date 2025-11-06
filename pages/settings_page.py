@@ -7,13 +7,13 @@ from pages.base_page import BasePage
 class SettingsPage(BasePage):
 
   NEW_PASSWORD_BUTTON = (By.CSS_SELECTOR, 'a.page-setting-block[href="/set-new-password"]')
+  CHANGE_PASSWORD_BUTTON_MOBILE = (By.CSS_SELECTOR, "a[href='/set-new-password']")
 
   def click_change_password_option(self):
-      change_password_button = WebDriverWait(self.driver, 15).until(
-            EC.element_to_be_clickable(self.NEW_PASSWORD_BUTTON)
-        )
-      change_password_button.click()
-
+      # Scroll to and click change password button
+      button = self.wait.until(EC.element_to_be_clickable(self.CHANGE_PASSWORD_BUTTON_MOBILE))
+      self.driver.execute_script("arguments[0].scrollIntoView();", button)
+      self.driver.execute_script("arguments[0].click();", button)
 
   def verify_right_page(self):
    current_url = self.driver.current_url

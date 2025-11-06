@@ -8,5 +8,5 @@ Feature: Sign In
     Then Verify the right page opens
     When Add some test password to the input fields
     Then Verify the “Change password” button is available (but don’t click on it)
-
+    Then Ignore JavaScript console errors as they are non-blocking
 
